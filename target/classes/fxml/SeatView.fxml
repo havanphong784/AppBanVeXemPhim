@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.cinema.controller.SeatController"
+            styleClass="main-container" prefWidth="900" prefHeight="650">
+    <top>
+        <VBox spacing="8" alignment="CENTER">
+            <padding><Insets top="10" bottom="10"/></padding>
+            <Label fx:id="movieTitleLabel" styleClass="title-label"/>
+            <Label fx:id="showtimeLabel" styleClass="subtitle-label"/>
+            <Label text="MÀN HÌNH" styleClass="screen-label"/>
+        </VBox>
+    </top>
+    <center>
+        <VBox alignment="CENTER" spacing="15">
+            <GridPane fx:id="seatGrid" alignment="CENTER" hgap="6" vgap="6">
+                <padding><Insets topRightBottomLeft="20"/></padding>
+            </GridPane>
+            <HBox spacing="20" alignment="CENTER">
+                <HBox spacing="5" alignment="CENTER">
+                    <Button styleClass="seat-btn,seat-available" text="" disable="true" minWidth="20" minHeight="20" maxWidth="20" maxHeight="20"/>
+                    <Label text="Trống" styleClass="subtitle-label"/>
+                </HBox>
+                <HBox spacing="5" alignment="CENTER">
+                    <Button styleClass="seat-btn,seat-selected" text="" disable="true" minWidth="20" minHeight="20" maxWidth="20" maxHeight="20"/>
+                    <Label text="Đang chọn" styleClass="subtitle-label"/>
+                </HBox>
+                <HBox spacing="5" alignment="CENTER">
+                    <Button styleClass="seat-btn,seat-booked" text="" disable="true" minWidth="20" minHeight="20" maxWidth="20" maxHeight="20"/>
+                    <Label text="Đã đặt" styleClass="subtitle-label"/>
+                </HBox>
+            </HBox>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox spacing="15" alignment="CENTER">
+            <padding><Insets top="15" bottom="15"/></padding>
+            <Label fx:id="selectedLabel" styleClass="subtitle-label" text="Chưa chọn ghế"/>
+            <Button fx:id="bookBtn" text="ĐẶT VÉ" styleClass="btn-primary" onAction="#onBook" disable="true"/>
+            <Button text="← Quay lại" styleClass="btn-primary" onAction="#onBack"/>
+        </HBox>
+    </bottom>
+</BorderPane>
